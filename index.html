@@ -37,14 +37,13 @@
     }
 
     #file {
-        opacity: 0;
-    }
-
-    #file-content {
-        width: 2rem;
+        width: 4rem;
+        height: 3rem;
+        line-height: 3rem;
         font-size: 0.65rem;
         text-align: center;
     }
+
 
     #input:focus {
         outline: none;
@@ -84,11 +83,8 @@
     <ul id="messages"></ul>
     <form id="form" action="">
         <input id="input" autocomplete="off" />
-        <div id="file-content">
-            选择文件
-            <input type="file" id="file" accept="image/png,image/jpg,image/jpeg,image/gif"
-                onchange="handleFiles(this.files)">
-        </div>
+        <input type="file" id="file" accept="image/png,image/jpg,image/jpeg,image/gif"
+            onchange="handleFiles(this.files)">
         <button>Send</button>
     </form>
     <script src="./node_modules/socket.io/client-dist/socket.io.js"></script>
@@ -108,12 +104,12 @@
                 reader.readAsDataURL(files[0])
                 reader.onload = function () {
                     socket.emit('image', reader.result);
-                    let item = document.createElement('li');
-                    messages.appendChild(item);
-                    let img = document.createElement('img');
-                    img.src = reader.result
-                    item.appendChild(img)
-                    window.scrollTo(0, document.body.scrollHeight);
+                    // let item = document.createElement('li');
+                    // messages.appendChild(item);
+                    // let img = document.createElement('img');
+                    // img.src = reader.result
+                    // item.appendChild(img)
+                    // window.scrollTo(0, document.body.scrollHeight);
                 }
             }
         }
