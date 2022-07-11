@@ -3,5 +3,6 @@
 - index.js 为后端文件
 - index.html 为客户端文件
 # 启动
+- 需要先安装依赖，执行： npm i
 - 前提需要安装node环境， 启动命令：npx nodemon index.js
 - 推荐在vs code中安装open live server插件，在html文件中鼠标右击选择open with live server启动客户端
