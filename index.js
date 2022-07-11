@@ -11,7 +11,9 @@ const server = http.createServer(app);
 const { Server } = require("socket.io");
 // 引入socket并监听端口
 const io = new Server(server, {
-    cors: true
+    cors: {
+        origin: '*'
+    }
 });
 io.listen(3002)
 
